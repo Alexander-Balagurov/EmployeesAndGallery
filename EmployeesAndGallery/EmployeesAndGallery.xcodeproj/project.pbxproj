@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		4318922F2B559FDCFD6AC25B /* Pods_EmployeesAndGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */; };
 		99B3884126B5485D00CDD957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3884026B5485D00CDD957 /* AppDelegate.swift */; };
-		99B3884526B5485D00CDD957 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3884426B5485D00CDD957 /* ViewController.swift */; };
 		99B3884B26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B3884926B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld */; };
 		99B3884D26B5485F00CDD957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B3884C26B5485F00CDD957 /* Assets.xcassets */; };
 		99B3885026B5485F00CDD957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B3884E26B5485F00CDD957 /* LaunchScreen.storyboard */; };
 		99B3886C26B5533C00CDD957 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3886B26B5533C00CDD957 /* R.generated.swift */; };
 		99B3886F26B5536600CDD957 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99B3886E26B5536600CDD957 /* Localizable.strings */; };
+		99B3887526B5589200CDD957 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3887426B5589200CDD957 /* BaseViewController.swift */; };
+		99B3887926B5590200CDD957 /* Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3887826B5590200CDD957 /* Autolayout.swift */; };
+		99B3887D26B5592F00CDD957 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3887C26B5592F00CDD957 /* ActivityView.swift */; };
+		99B3888126B5598800CDD957 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3888026B5598800CDD957 /* UIViewController+extensions.swift */; };
+		99B3888626B55A4300CDD957 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3888526B55A4300CDD957 /* AppFlowController.swift */; };
+		99B3889126B55B9500CDD957 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889026B55B9400CDD957 /* MainFlowController.swift */; };
+		99B3889626B56A3200CDD957 /* EmployeesFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889526B56A3200CDD957 /* EmployeesFlowController.swift */; };
+		99B3889A26B56B2B00CDD957 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */; };
+		99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */; };
+		99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889F26B56B8100CDD957 /* GalleryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +31,22 @@
 		4E5DBCA6C8E86CC88A846C9C /* Pods-EmployeesAndGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeesAndGallery.release.xcconfig"; path = "Target Support Files/Pods-EmployeesAndGallery/Pods-EmployeesAndGallery.release.xcconfig"; sourceTree = "<group>"; };
 		99B3883D26B5485D00CDD957 /* EmployeesAndGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeesAndGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B3884026B5485D00CDD957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99B3884426B5485D00CDD957 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99B3884A26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeesAndGallery.xcdatamodel; sourceTree = "<group>"; };
 		99B3884C26B5485F00CDD957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99B3884F26B5485F00CDD957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B3885126B5485F00CDD957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B3886B26B5533C00CDD957 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		99B3886E26B5536600CDD957 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		99B3887426B5589200CDD957 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		99B3887826B5590200CDD957 /* Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Autolayout.swift; sourceTree = "<group>"; };
+		99B3887C26B5592F00CDD957 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		99B3888026B5598800CDD957 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
+		99B3888526B55A4300CDD957 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		99B3889026B55B9400CDD957 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		99B3889526B56A3200CDD957 /* EmployeesFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesFlowController.swift; sourceTree = "<group>"; };
+		99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFlowController.swift; sourceTree = "<group>"; };
+		99B3889F26B56B8100CDD957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesAndGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,7 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				99B3884026B5485D00CDD957 /* AppDelegate.swift */,
-				99B3884426B5485D00CDD957 /* ViewController.swift */,
+				99B3887326B5587900CDD957 /* Common */,
+				99B3887226B5587200CDD957 /* Models */,
+				99B3887126B5586900CDD957 /* ViewControllers */,
 				99B3885126B5485F00CDD957 /* Info.plist */,
 				99B3886426B5525C00CDD957 /* Resources */,
 				99B3884926B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld */,
@@ -91,6 +111,85 @@
 				99B3884E26B5485F00CDD957 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		99B3887126B5586900CDD957 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				99B3888526B55A4300CDD957 /* AppFlowController.swift */,
+				99B3888926B55B2C00CDD957 /* Base */,
+				99B3888826B55B1E00CDD957 /* Main */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		99B3887226B5587200CDD957 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		99B3887326B5587900CDD957 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				99B3887F26B5596000CDD957 /* Extensions */,
+				99B3887B26B5592200CDD957 /* Views */,
+				99B3887826B5590200CDD957 /* Autolayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		99B3887B26B5592200CDD957 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99B3887C26B5592F00CDD957 /* ActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99B3887F26B5596000CDD957 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99B3888026B5598800CDD957 /* UIViewController+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		99B3888826B55B1E00CDD957 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				99B3889026B55B9400CDD957 /* MainFlowController.swift */,
+				99B3889426B56A1300CDD957 /* Gallery */,
+				99B3889326B569FC00CDD957 /* Employees */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		99B3888926B55B2C00CDD957 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				99B3887426B5589200CDD957 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		99B3889326B569FC00CDD957 /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				99B3889526B56A3200CDD957 /* EmployeesFlowController.swift */,
+				99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		99B3889426B56A1300CDD957 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */,
+				99B3889F26B56B8100CDD957 /* GalleryViewController.swift */,
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 		BD8BF15CF97129C0D0871593 /* Pods */ = {
@@ -237,10 +336,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B3887526B5589200CDD957 /* BaseViewController.swift in Sources */,
 				99B3884B26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld in Sources */,
-				99B3884526B5485D00CDD957 /* ViewController.swift in Sources */,
+				99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */,
+				99B3887926B5590200CDD957 /* Autolayout.swift in Sources */,
+				99B3889A26B56B2B00CDD957 /* EmployeesViewController.swift in Sources */,
+				99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */,
+				99B3889126B55B9500CDD957 /* MainFlowController.swift in Sources */,
+				99B3888126B5598800CDD957 /* UIViewController+extensions.swift in Sources */,
+				99B3889626B56A3200CDD957 /* EmployeesFlowController.swift in Sources */,
+				99B3887D26B5592F00CDD957 /* ActivityView.swift in Sources */,
 				99B3884126B5485D00CDD957 /* AppDelegate.swift in Sources */,
 				99B3886C26B5533C00CDD957 /* R.generated.swift in Sources */,
+				99B3888626B55A4300CDD957 /* AppFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
