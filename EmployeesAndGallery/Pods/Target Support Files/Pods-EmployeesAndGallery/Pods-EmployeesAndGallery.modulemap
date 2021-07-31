@@ -1,0 +1,6 @@
+framework module Pods_EmployeesAndGallery {
+  umbrella header "Pods-EmployeesAndGallery-umbrella.h"
+
+  export *
+  module * { export * }
+}
