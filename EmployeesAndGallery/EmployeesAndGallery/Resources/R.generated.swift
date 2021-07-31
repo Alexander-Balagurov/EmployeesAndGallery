@@ -130,6 +130,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `splash`.
+    static let splash = Rswift.ImageResource(bundle: R.hostingBundle, name: "splash")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "splash", bundle: ..., traitCollection: ...)`
+    static func splash(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.splash, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
@@ -207,7 +222,9 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "pencil") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'pencil' is used in storyboard 'LaunchScreen', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "AccentColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AccentColor' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
       }
 

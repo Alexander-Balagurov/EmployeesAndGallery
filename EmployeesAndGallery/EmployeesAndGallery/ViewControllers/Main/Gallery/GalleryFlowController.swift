@@ -8,8 +8,10 @@
 import UIKit
 
 final class GalleryFlowController: BaseViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        title = R.string.localizable.gallery()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

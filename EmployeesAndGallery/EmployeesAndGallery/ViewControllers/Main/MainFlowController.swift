@@ -22,22 +22,16 @@ final class MainFlowController: BaseViewController {
     private let tabBarVC: UITabBarController = .init()
     private lazy var employeesFC: EmployeesFlowController = createEmployeesFlowController()
     private lazy var galleryFC: GalleryFlowController = createGalleryFlowController()
-
-    // MARK: - Override
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-    }
 }
 
 fileprivate extension MainFlowController {
     func configureTabBarController() {
+
         tabBarVC.setViewControllers([employeesFC, galleryFC], animated: false)
-        tabBarVC.selectedViewController = tabBarVC.viewControllers?.first
     }
 
     func createEmployeesFlowController() -> EmployeesFlowController {
+
         let fc = EmployeesFlowController()
         fc.tabBarItem = UITabBarItem(
             title: R.string.localizable.list(),
@@ -49,6 +43,7 @@ fileprivate extension MainFlowController {
     }
 
     func createGalleryFlowController() -> GalleryFlowController {
+
         let fc = GalleryFlowController()
         fc.tabBarItem = UITabBarItem(
             title: R.string.localizable.gallery(),

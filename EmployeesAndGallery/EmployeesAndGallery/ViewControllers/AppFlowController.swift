@@ -22,7 +22,6 @@ final class AppFlowController: BaseViewController {
     // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
     }
 }
 

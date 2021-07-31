@@ -95,9 +95,9 @@
 				99B3887326B5587900CDD957 /* Common */,
 				99B3887226B5587200CDD957 /* Models */,
 				99B3887126B5586900CDD957 /* ViewControllers */,
-				99B3885126B5485F00CDD957 /* Info.plist */,
+				99B388B226B58AA200CDD957 /* CoreData */,
 				99B3886426B5525C00CDD957 /* Resources */,
-				99B3884926B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld */,
+				99B3885126B5485F00CDD957 /* Info.plist */,
 			);
 			path = EmployeesAndGallery;
 			sourceTree = "<group>";
@@ -190,6 +190,14 @@
 				99B3889F26B56B8100CDD957 /* GalleryViewController.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		99B388B226B58AA200CDD957 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				99B3884926B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		BD8BF15CF97129C0D0871593 /* Pods */ = {
