@@ -145,14 +145,105 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `AddEmployeeTableViewCell`.
+    static let addEmployeeTableViewCell = _R.nib._AddEmployeeTableViewCell()
+    /// Nib `SegmentControlHeaderView`.
+    static let segmentControlHeaderView = _R.nib._SegmentControlHeaderView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddEmployeeTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addEmployeeTableViewCell) instead")
+    static func addEmployeeTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addEmployeeTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SegmentControlHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.segmentControlHeaderView) instead")
+    static func segmentControlHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.segmentControlHeaderView)
+    }
+    #endif
+
+    static func addEmployeeTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddEmployeeTableViewCell? {
+      return R.nib.addEmployeeTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddEmployeeTableViewCell
+    }
+
+    static func segmentControlHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SegmentControlHeaderView? {
+      return R.nib.segmentControlHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SegmentControlHeaderView
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
+      /// Value: Accountant Type
+      static let accountantType = Rswift.StringResource(key: "accountantType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Edit
+      static let edit = Rswift.StringResource(key: "edit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Employee Type
+      static let employeeType = Rswift.StringResource(key: "employeeType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Gallery
       static let gallery = Rswift.StringResource(key: "gallery", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: List
       static let list = Rswift.StringResource(key: "list", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Lunch Time
+      static let lunchTime = Rswift.StringResource(key: "lunchTime", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Name
+      static let name = Rswift.StringResource(key: "name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Reception Hours
+      static let receptionHours = Rswift.StringResource(key: "receptionHours", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Salary
+      static let salary = Rswift.StringResource(key: "salary", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Save
+      static let save = Rswift.StringResource(key: "save", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Workplace Number
+      static let workplaceNumber = Rswift.StringResource(key: "workplaceNumber", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Accountant Type
+      static func accountantType(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("accountantType", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "accountantType"
+        }
+
+        return NSLocalizedString("accountantType", bundle: bundle, comment: "")
+      }
+
+      /// Value: Edit
+      static func edit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("edit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "edit"
+        }
+
+        return NSLocalizedString("edit", bundle: bundle, comment: "")
+      }
+
+      /// Value: Employee Type
+      static func employeeType(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("employeeType", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "employeeType"
+        }
+
+        return NSLocalizedString("employeeType", bundle: bundle, comment: "")
+      }
 
       /// Value: Gallery
       static func gallery(preferredLanguages: [String]? = nil) -> String {
@@ -180,6 +271,84 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("list", bundle: bundle, comment: "")
       }
 
+      /// Value: Lunch Time
+      static func lunchTime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lunchTime", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lunchTime"
+        }
+
+        return NSLocalizedString("lunchTime", bundle: bundle, comment: "")
+      }
+
+      /// Value: Name
+      static func name(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("name", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "name"
+        }
+
+        return NSLocalizedString("name", bundle: bundle, comment: "")
+      }
+
+      /// Value: Reception Hours
+      static func receptionHours(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("receptionHours", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "receptionHours"
+        }
+
+        return NSLocalizedString("receptionHours", bundle: bundle, comment: "")
+      }
+
+      /// Value: Salary
+      static func salary(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("salary", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "salary"
+        }
+
+        return NSLocalizedString("salary", bundle: bundle, comment: "")
+      }
+
+      /// Value: Save
+      static func save(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("save", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "save"
+        }
+
+        return NSLocalizedString("save", bundle: bundle, comment: "")
+      }
+
+      /// Value: Workplace Number
+      static func workplaceNumber(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("workplaceNumber", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "workplaceNumber"
+        }
+
+        return NSLocalizedString("workplaceNumber", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -205,6 +374,34 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _AddEmployeeTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AddEmployeeTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddEmployeeTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddEmployeeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SegmentControlHeaderView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SegmentControlHeaderView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SegmentControlHeaderView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SegmentControlHeaderView
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

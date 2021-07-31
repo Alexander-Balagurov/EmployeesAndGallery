@@ -32,6 +32,13 @@
 		99B388F326B59A4D00CDD957 /* Accountant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388EB26B59A4D00CDD957 /* Accountant+CoreDataClass.swift */; };
 		99B388F426B59A4D00CDD957 /* Management+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388EC26B59A4D00CDD957 /* Management+CoreDataProperties.swift */; };
 		99B388F526B59A4D00CDD957 /* Accountant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388ED26B59A4D00CDD957 /* Accountant+CoreDataProperties.swift */; };
+		99B388FF26B5AE7600CDD957 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388FE26B5AE7600CDD957 /* AddEmployeeViewController.swift */; };
+		99B3890826B5D27300CDD957 /* AddEmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3890726B5D27300CDD957 /* AddEmployeeTableViewCell.xib */; };
+		99B3890B26B5D48600CDD957 /* AddEmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3890A26B5D48600CDD957 /* AddEmployeeTableViewCell.swift */; };
+		99B3890E26B5D55300CDD957 /* SegmentControlHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3890D26B5D55300CDD957 /* SegmentControlHeaderView.swift */; };
+		99B3891326B5D58800CDD957 /* SegmentControlHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3891226B5D58800CDD957 /* SegmentControlHeaderView.xib */; };
+		99B3891626B5D85E00CDD957 /* UITableView+reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */; };
+		99B3892026B5E68900CDD957 /* UIView+loadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,13 @@
 		99B388EB26B59A4D00CDD957 /* Accountant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Accountant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		99B388EC26B59A4D00CDD957 /* Management+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Management+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		99B388ED26B59A4D00CDD957 /* Accountant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Accountant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99B388FE26B5AE7600CDD957 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		99B3890726B5D27300CDD957 /* AddEmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		99B3890A26B5D48600CDD957 /* AddEmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		99B3890D26B5D55300CDD957 /* SegmentControlHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlHeaderView.swift; sourceTree = "<group>"; };
+		99B3891226B5D58800CDD957 /* SegmentControlHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentControlHeaderView.xib; sourceTree = "<group>"; };
+		99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+reusable.swift"; sourceTree = "<group>"; };
+		99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+loadNib.swift"; sourceTree = "<group>"; };
 		9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesAndGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,7 +181,9 @@
 		99B3887F26B5596000CDD957 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */,
 				99B3888026B5598800CDD957 /* UIViewController+extensions.swift */,
+				99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,8 +209,10 @@
 		99B3889326B569FC00CDD957 /* Employees */ = {
 			isa = PBXGroup;
 			children = (
+				99B3890626B5D24400CDD957 /* Views */,
 				99B3889526B56A3200CDD957 /* EmployeesFlowController.swift */,
 				99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */,
+				99B388FE26B5AE7600CDD957 /* AddEmployeeViewController.swift */,
 			);
 			path = Employees;
 			sourceTree = "<group>";
@@ -230,6 +248,17 @@
 				99B388EC26B59A4D00CDD957 /* Management+CoreDataProperties.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		99B3890626B5D24400CDD957 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99B3890726B5D27300CDD957 /* AddEmployeeTableViewCell.xib */,
+				99B3890A26B5D48600CDD957 /* AddEmployeeTableViewCell.swift */,
+				99B3890D26B5D55300CDD957 /* SegmentControlHeaderView.swift */,
+				99B3891226B5D58800CDD957 /* SegmentControlHeaderView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BD8BF15CF97129C0D0871593 /* Pods */ = {
@@ -304,6 +333,8 @@
 				99B3885026B5485F00CDD957 /* LaunchScreen.storyboard in Resources */,
 				99B3886F26B5536600CDD957 /* Localizable.strings in Resources */,
 				99B3884D26B5485F00CDD957 /* Assets.xcassets in Resources */,
+				99B3890826B5D27300CDD957 /* AddEmployeeTableViewCell.xib in Resources */,
+				99B3891326B5D58800CDD957 /* SegmentControlHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,13 +411,18 @@
 				99B3884B26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld in Sources */,
 				99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */,
 				99B3887926B5590200CDD957 /* Autolayout.swift in Sources */,
+				99B3892026B5E68900CDD957 /* UIView+loadNib.swift in Sources */,
+				99B388FF26B5AE7600CDD957 /* AddEmployeeViewController.swift in Sources */,
+				99B3891626B5D85E00CDD957 /* UITableView+reusable.swift in Sources */,
 				99B388EF26B59A4D00CDD957 /* Employee+CoreDataProperties.swift in Sources */,
 				99B3889A26B56B2B00CDD957 /* EmployeesViewController.swift in Sources */,
 				99B388F226B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift in Sources */,
+				99B3890E26B5D55300CDD957 /* SegmentControlHeaderView.swift in Sources */,
 				99B388EE26B59A4D00CDD957 /* Employee+CoreDataClass.swift in Sources */,
 				99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */,
 				99B3889126B55B9500CDD957 /* MainFlowController.swift in Sources */,
 				99B388F326B59A4D00CDD957 /* Accountant+CoreDataClass.swift in Sources */,
+				99B3890B26B5D48600CDD957 /* AddEmployeeTableViewCell.swift in Sources */,
 				99B3888126B5598800CDD957 /* UIViewController+extensions.swift in Sources */,
 				99B388F026B59A4D00CDD957 /* Management+CoreDataClass.swift in Sources */,
 				99B388F526B59A4D00CDD957 /* Accountant+CoreDataProperties.swift in Sources */,

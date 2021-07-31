@@ -1,2 +1,12 @@
 "list" = "List";
 "gallery" = "Gallery";
+"edit" = "Edit";
+"save" = "Save";
+"name" = "Name";
+"salary" = "Salary";
+"receptionHours" = "Reception Hours";
+"workplaceNumber" = "Workplace Number";
+"lunchTime" = "Lunch Time";
+"accountantType" = "Accountant Type";
+"employeeType" = "Employee Type";
+
