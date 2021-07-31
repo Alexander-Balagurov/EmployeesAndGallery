@@ -24,6 +24,14 @@
 		99B3889A26B56B2B00CDD957 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */; };
 		99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */; };
 		99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889F26B56B8100CDD957 /* GalleryViewController.swift */; };
+		99B388EE26B59A4D00CDD957 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E626B59A4D00CDD957 /* Employee+CoreDataClass.swift */; };
+		99B388EF26B59A4D00CDD957 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E726B59A4D00CDD957 /* Employee+CoreDataProperties.swift */; };
+		99B388F026B59A4D00CDD957 /* Management+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E826B59A4D00CDD957 /* Management+CoreDataClass.swift */; };
+		99B388F126B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E926B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift */; };
+		99B388F226B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388EA26B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift */; };
+		99B388F326B59A4D00CDD957 /* Accountant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388EB26B59A4D00CDD957 /* Accountant+CoreDataClass.swift */; };
+		99B388F426B59A4D00CDD957 /* Management+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388EC26B59A4D00CDD957 /* Management+CoreDataProperties.swift */; };
+		99B388F526B59A4D00CDD957 /* Accountant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388ED26B59A4D00CDD957 /* Accountant+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +55,14 @@
 		99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFlowController.swift; sourceTree = "<group>"; };
 		99B3889F26B56B8100CDD957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		99B388E626B59A4D00CDD957 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99B388E726B59A4D00CDD957 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99B388E826B59A4D00CDD957 /* Management+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Management+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99B388E926B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseEmployee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99B388EA26B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseEmployee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99B388EB26B59A4D00CDD957 /* Accountant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Accountant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99B388EC26B59A4D00CDD957 /* Management+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Management+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99B388ED26B59A4D00CDD957 /* Accountant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Accountant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesAndGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,9 +211,25 @@
 		99B388B226B58AA200CDD957 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				99B388F726B59B3D00CDD957 /* Extensions */,
+				99B388EB26B59A4D00CDD957 /* Accountant+CoreDataClass.swift */,
+				99B388E926B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift */,
+				99B388E626B59A4D00CDD957 /* Employee+CoreDataClass.swift */,
+				99B388E826B59A4D00CDD957 /* Management+CoreDataClass.swift */,
 				99B3884926B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		99B388F726B59B3D00CDD957 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99B388ED26B59A4D00CDD957 /* Accountant+CoreDataProperties.swift */,
+				99B388EA26B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift */,
+				99B388E726B59A4D00CDD957 /* Employee+CoreDataProperties.swift */,
+				99B388EC26B59A4D00CDD957 /* Management+CoreDataProperties.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BD8BF15CF97129C0D0871593 /* Pods */ = {
@@ -348,14 +380,22 @@
 				99B3884B26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld in Sources */,
 				99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */,
 				99B3887926B5590200CDD957 /* Autolayout.swift in Sources */,
+				99B388EF26B59A4D00CDD957 /* Employee+CoreDataProperties.swift in Sources */,
 				99B3889A26B56B2B00CDD957 /* EmployeesViewController.swift in Sources */,
+				99B388F226B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift in Sources */,
+				99B388EE26B59A4D00CDD957 /* Employee+CoreDataClass.swift in Sources */,
 				99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */,
 				99B3889126B55B9500CDD957 /* MainFlowController.swift in Sources */,
+				99B388F326B59A4D00CDD957 /* Accountant+CoreDataClass.swift in Sources */,
 				99B3888126B5598800CDD957 /* UIViewController+extensions.swift in Sources */,
+				99B388F026B59A4D00CDD957 /* Management+CoreDataClass.swift in Sources */,
+				99B388F526B59A4D00CDD957 /* Accountant+CoreDataProperties.swift in Sources */,
 				99B3889626B56A3200CDD957 /* EmployeesFlowController.swift in Sources */,
 				99B3887D26B5592F00CDD957 /* ActivityView.swift in Sources */,
 				99B3884126B5485D00CDD957 /* AppDelegate.swift in Sources */,
+				99B388F126B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift in Sources */,
 				99B3886C26B5533C00CDD957 /* R.generated.swift in Sources */,
+				99B388F426B59A4D00CDD957 /* Management+CoreDataProperties.swift in Sources */,
 				99B3888626B55A4300CDD957 /* AppFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
