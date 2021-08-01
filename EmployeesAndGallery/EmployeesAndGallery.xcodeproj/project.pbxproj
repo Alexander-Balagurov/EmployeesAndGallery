@@ -22,8 +22,6 @@
 		99B3889126B55B9500CDD957 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889026B55B9400CDD957 /* MainFlowController.swift */; };
 		99B3889626B56A3200CDD957 /* EmployeesFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889526B56A3200CDD957 /* EmployeesFlowController.swift */; };
 		99B3889A26B56B2B00CDD957 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */; };
-		99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */; };
-		99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3889F26B56B8100CDD957 /* GalleryViewController.swift */; };
 		99B388EE26B59A4D00CDD957 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E626B59A4D00CDD957 /* Employee+CoreDataClass.swift */; };
 		99B388EF26B59A4D00CDD957 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E726B59A4D00CDD957 /* Employee+CoreDataProperties.swift */; };
 		99B388F026B59A4D00CDD957 /* Management+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B388E826B59A4D00CDD957 /* Management+CoreDataClass.swift */; };
@@ -40,6 +38,11 @@
 		99B3891626B5D85E00CDD957 /* UITableView+reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */; };
 		99B3892026B5E68900CDD957 /* UIView+loadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */; };
 		99B3892326B692BD00CDD957 /* AddEmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3892226B692BD00CDD957 /* AddEmployeeModel.swift */; };
+		99B3892E26B69C4900CDD957 /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3892A26B69C4900CDD957 /* GalleryViewCell.swift */; };
+		99B3892F26B69C4900CDD957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3892B26B69C4900CDD957 /* GalleryViewController.swift */; };
+		99B3893326B69DEB00CDD957 /* UICollectionView+reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3893226B69DEB00CDD957 /* UICollectionView+reusable.swift */; };
+		99B3893D26B6A3E400CDD957 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3893C26B6A3E400CDD957 /* GalleryViewController.xib */; };
+		99B3894026B6A47600CDD957 /* GalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3893F26B6A47600CDD957 /* GalleryViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +64,6 @@
 		99B3889026B55B9400CDD957 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		99B3889526B56A3200CDD957 /* EmployeesFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesFlowController.swift; sourceTree = "<group>"; };
 		99B3889926B56B2B00CDD957 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
-		99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFlowController.swift; sourceTree = "<group>"; };
-		99B3889F26B56B8100CDD957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		99B388E626B59A4D00CDD957 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
 		99B388E726B59A4D00CDD957 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		99B388E826B59A4D00CDD957 /* Management+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Management+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -79,6 +80,11 @@
 		99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+reusable.swift"; sourceTree = "<group>"; };
 		99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+loadNib.swift"; sourceTree = "<group>"; };
 		99B3892226B692BD00CDD957 /* AddEmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeModel.swift; sourceTree = "<group>"; };
+		99B3892A26B69C4900CDD957 /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
+		99B3892B26B69C4900CDD957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		99B3893226B69DEB00CDD957 /* UICollectionView+reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+reusable.swift"; sourceTree = "<group>"; };
+		99B3893C26B6A3E400CDD957 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
+		99B3893F26B6A47600CDD957 /* GalleryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewCell.xib; sourceTree = "<group>"; };
 		9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesAndGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */,
+				99B3893226B69DEB00CDD957 /* UICollectionView+reusable.swift */,
 				99B3888026B5598800CDD957 /* UIViewController+extensions.swift */,
 				99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */,
 			);
@@ -223,8 +230,9 @@
 		99B3889426B56A1300CDD957 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				99B3889C26B56B5900CDD957 /* GalleryFlowController.swift */,
-				99B3889F26B56B8100CDD957 /* GalleryViewController.swift */,
+				99B3894226B6B02C00CDD957 /* Cell */,
+				99B3892B26B69C4900CDD957 /* GalleryViewController.swift */,
+				99B3893C26B6A3E400CDD957 /* GalleryViewController.xib */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -262,6 +270,15 @@
 				99B3891226B5D58800CDD957 /* SegmentControlHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		99B3894226B6B02C00CDD957 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				99B3892A26B69C4900CDD957 /* GalleryViewCell.swift */,
+				99B3893F26B6A47600CDD957 /* GalleryViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BD8BF15CF97129C0D0871593 /* Pods */ = {
@@ -334,6 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B3885026B5485F00CDD957 /* LaunchScreen.storyboard in Resources */,
+				99B3894026B6A47600CDD957 /* GalleryViewCell.xib in Resources */,
+				99B3893D26B6A3E400CDD957 /* GalleryViewController.xib in Resources */,
 				99B3886F26B5536600CDD957 /* Localizable.strings in Resources */,
 				99B3884D26B5485F00CDD957 /* Assets.xcassets in Resources */,
 				99B3890826B5D27300CDD957 /* AddEmployeeTableViewCell.xib in Resources */,
@@ -411,8 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B3887526B5589200CDD957 /* BaseViewController.swift in Sources */,
+				99B3892F26B69C4900CDD957 /* GalleryViewController.swift in Sources */,
 				99B3884B26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld in Sources */,
-				99B3889D26B56B5900CDD957 /* GalleryFlowController.swift in Sources */,
 				99B3887926B5590200CDD957 /* Autolayout.swift in Sources */,
 				99B3892026B5E68900CDD957 /* UIView+loadNib.swift in Sources */,
 				99B388FF26B5AE7600CDD957 /* AddEmployeeViewController.swift in Sources */,
@@ -422,9 +441,9 @@
 				99B388F226B59A4D00CDD957 /* BaseEmployee+CoreDataProperties.swift in Sources */,
 				99B3890E26B5D55300CDD957 /* SegmentControlHeaderView.swift in Sources */,
 				99B388EE26B59A4D00CDD957 /* Employee+CoreDataClass.swift in Sources */,
-				99B388A026B56B8100CDD957 /* GalleryViewController.swift in Sources */,
 				99B3889126B55B9500CDD957 /* MainFlowController.swift in Sources */,
 				99B388F326B59A4D00CDD957 /* Accountant+CoreDataClass.swift in Sources */,
+				99B3893326B69DEB00CDD957 /* UICollectionView+reusable.swift in Sources */,
 				99B3890B26B5D48600CDD957 /* AddEmployeeTableViewCell.swift in Sources */,
 				99B3888126B5598800CDD957 /* UIViewController+extensions.swift in Sources */,
 				99B388F026B59A4D00CDD957 /* Management+CoreDataClass.swift in Sources */,
@@ -434,6 +453,7 @@
 				99B3892326B692BD00CDD957 /* AddEmployeeModel.swift in Sources */,
 				99B3884126B5485D00CDD957 /* AppDelegate.swift in Sources */,
 				99B388F126B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift in Sources */,
+				99B3892E26B69C4900CDD957 /* GalleryViewCell.swift in Sources */,
 				99B3886C26B5533C00CDD957 /* R.generated.swift in Sources */,
 				99B388F426B59A4D00CDD957 /* Management+CoreDataProperties.swift in Sources */,
 				99B3888626B55A4300CDD957 /* AppFlowController.swift in Sources */,

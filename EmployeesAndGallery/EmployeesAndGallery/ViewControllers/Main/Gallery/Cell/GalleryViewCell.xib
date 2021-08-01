@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="YIV-Cw-veV" customClass="GalleryViewCell" customModule="EmployeesAndGallery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="1000" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-Pz-bd0">
+                    <rect key="frame" x="0.0" y="121.5" width="414" height="663"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="DeF-Ca-iQP"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DeF-Ca-iQP" firstAttribute="trailing" secondItem="bhN-Pz-bd0" secondAttribute="trailing" id="L0O-eC-xzI"/>
+                <constraint firstItem="bhN-Pz-bd0" firstAttribute="leading" secondItem="DeF-Ca-iQP" secondAttribute="leading" id="MtO-lf-aIJ"/>
+                <constraint firstItem="bhN-Pz-bd0" firstAttribute="top" secondItem="DeF-Ca-iQP" secondAttribute="top" constant="80" id="O8b-bg-98x"/>
+                <constraint firstItem="DeF-Ca-iQP" firstAttribute="bottom" secondItem="bhN-Pz-bd0" secondAttribute="bottom" constant="80" id="nj8-Wy-kvn"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="bhN-Pz-bd0" id="mvF-sf-l9F"/>
+            </connections>
+            <point key="canvasLocation" x="271" y="23"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

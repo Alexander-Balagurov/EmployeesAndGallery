@@ -130,10 +130,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `AddEmployeeTableViewCell`.
     static let addEmployeeTableViewCell = _R.nib._AddEmployeeTableViewCell()
+    /// Nib `GalleryViewCell`.
+    static let galleryViewCell = _R.nib._GalleryViewCell()
+    /// Nib `GalleryViewController`.
+    static let galleryViewController = _R.nib._GalleryViewController()
     /// Nib `SegmentControlHeaderView`.
     static let segmentControlHeaderView = _R.nib._SegmentControlHeaderView()
 
@@ -142,6 +146,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addEmployeeTableViewCell) instead")
     static func addEmployeeTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addEmployeeTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GalleryViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.galleryViewCell) instead")
+    static func galleryViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.galleryViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GalleryViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.galleryViewController) instead")
+    static func galleryViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.galleryViewController)
     }
     #endif
 
@@ -157,6 +177,14 @@ struct R: Rswift.Validatable {
       return R.nib.addEmployeeTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddEmployeeTableViewCell
     }
 
+    static func galleryViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GalleryViewCell? {
+      return R.nib.galleryViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GalleryViewCell
+    }
+
+    static func galleryViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.galleryViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func segmentControlHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SegmentControlHeaderView? {
       return R.nib.segmentControlHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SegmentControlHeaderView
     }
@@ -166,14 +194,18 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 13 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
     struct localizable {
       /// Value: Accountant Type
       static let accountantType = Rswift.StringResource(key: "accountantType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Back
+      static let back = Rswift.StringResource(key: "back", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Edit
       static let edit = Rswift.StringResource(key: "edit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Employee Type
       static let employeeType = Rswift.StringResource(key: "employeeType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Forward
+      static let forward = Rswift.StringResource(key: "forward", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Gallery
       static let gallery = Rswift.StringResource(key: "gallery", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: List
@@ -208,6 +240,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountantType", bundle: bundle, comment: "")
       }
 
+      /// Value: Back
+      static func back(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("back", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "back"
+        }
+
+        return NSLocalizedString("back", bundle: bundle, comment: "")
+      }
+
       /// Value: Edit
       static func edit(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -232,6 +277,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("employeeType", bundle: bundle, comment: "")
+      }
+
+      /// Value: Forward
+      static func forward(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("forward", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "forward"
+        }
+
+        return NSLocalizedString("forward", bundle: bundle, comment: "")
       }
 
       /// Value: Gallery
@@ -386,18 +444,53 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _GalleryViewCell.validate()
+    }
+
     struct _AddEmployeeTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "AddEmployeeTableViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddEmployeeTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddEmployeeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GalleryViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GalleryViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GalleryViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GalleryViewCell
+      }
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "square.and.arrow.up.on.square") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'square.and.arrow.up.on.square' is used in nib 'GalleryViewCell', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GalleryViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GalleryViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

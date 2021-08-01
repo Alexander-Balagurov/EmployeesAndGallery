@@ -21,13 +21,13 @@ final class MainFlowController: BaseViewController {
 
     private let tabBarVC: UITabBarController = .init()
     private lazy var employeesFC: EmployeesFlowController = createEmployeesFlowController()
-    private lazy var galleryFC: GalleryFlowController = createGalleryFlowController()
+    private lazy var galleryNC: UINavigationController = createGalleryNavigationController()
 }
 
 fileprivate extension MainFlowController {
     func configureTabBarController() {
 
-        tabBarVC.setViewControllers([employeesFC, galleryFC], animated: false)
+        tabBarVC.setViewControllers([employeesFC, galleryNC], animated: false)
     }
 
     func createEmployeesFlowController() -> EmployeesFlowController {
@@ -42,15 +42,17 @@ fileprivate extension MainFlowController {
         return fc
     }
 
-    func createGalleryFlowController() -> GalleryFlowController {
+    func createGalleryNavigationController() -> UINavigationController {
 
-        let fc = GalleryFlowController()
-        fc.tabBarItem = UITabBarItem(
+        let nc = UINavigationController()
+        let vc = GalleryViewController()
+        vc.tabBarItem = UITabBarItem(
             title: R.string.localizable.gallery(),
             image: UIImage(systemName: "photo"),
             selectedImage: UIImage(systemName: "photo.fill")
         )
+        nc.setViewControllers([vc], animated: false)
 
-        return fc
+        return nc
     }
 }

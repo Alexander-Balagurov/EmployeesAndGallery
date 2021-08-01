@@ -11,4 +11,6 @@
 "employeeType" = "Employee Type";
 "payroll" = "Payroll";
 "materialsAccounting" = "Materials Accounting";
+"back" = "Back";
+"forward" = "Forward";
 
