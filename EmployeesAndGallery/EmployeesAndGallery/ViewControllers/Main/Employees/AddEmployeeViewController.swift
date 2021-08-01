@@ -12,6 +12,7 @@ final class AddEmployeeViewController: BaseViewController {
     // MARK: - Private
     private let tableView: UITableView = .init(frame: .zero)
     private let headerView: SegmentControlHeaderView = .loadFromNib()
+    private var addEmployeeModel: AddEmployeeModel = .init()
 
     //MARK: - Override
     override func viewDidLoad() {
@@ -78,6 +79,16 @@ fileprivate extension AddEmployeeViewController {
         }
     }
 
+    func createFontSizePicker() -> UIPickerView {
+
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        picker.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        return picker
+    }
+
     //MARK: - Actions
 
     @objc func saveButtonTapped() {
@@ -96,7 +107,11 @@ extension AddEmployeeViewController: UITableViewDataSource {
 
         let cellType = CellType.init(at: indexPath)
         let cell: AddEmployeeTableViewCell = tableView.dequeueCell(indexPath: indexPath)
-        cell.viewModel = .init(title: cellType.titleText)
+        if cellType == .accountantType {
+            cell.viewModel = .init(title: cellType.titleText, inputView: createFontSizePicker())
+        } else {
+            cell.viewModel = .init(title: cellType.titleText)
+        }
 
         return cell
     }
@@ -108,12 +123,28 @@ extension AddEmployeeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         tableView.deselectRow(at: indexPath, animated: true)
-        let cellType = CellType(at: indexPath)
+    }
+}
 
-        switch cellType {
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
+extension AddEmployeeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
-        case .name, .salary, .receptionHours, .workplaceNumber, .lunchTime, .accountantType:
-            break
-        }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+        return AccountantType.allCases.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        return "tets"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
     }
 }

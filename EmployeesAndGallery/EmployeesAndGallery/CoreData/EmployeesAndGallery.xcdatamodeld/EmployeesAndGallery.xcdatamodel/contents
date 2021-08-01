@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Accountant" representedClassName="Accountant" parentEntity="Employee" syncable="YES">
-        <attribute name="accountantType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="accountantType" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="BaseEmployee" representedClassName="BaseEmployee" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="salary" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Employee" representedClassName="Employee" parentEntity="BaseEmployee" syncable="YES">
-        <attribute name="lunchTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lunchTime" optional="YES" attributeType="String"/>
         <attribute name="workplaceNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Management" representedClassName="Management" parentEntity="BaseEmployee" syncable="YES">
         <attribute name="receptionHours" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="BaseEmployee" positionX="-63" positionY="-18" width="128" height="59"/>
-        <element name="Management" positionX="-54" positionY="9" width="128" height="44"/>
-        <element name="Employee" positionX="-36" positionY="18" width="128" height="59"/>
         <element name="Accountant" positionX="-18" positionY="45" width="128" height="44"/>
+        <element name="BaseEmployee" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="Employee" positionX="-36" positionY="18" width="128" height="59"/>
+        <element name="Management" positionX="-54" positionY="9" width="128" height="44"/>
     </elements>
 </model>

@@ -130,21 +130,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
-  struct image {
-    /// Image `splash`.
-    static let splash = Rswift.ImageResource(bundle: R.hostingBundle, name: "splash")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "splash", bundle: ..., traitCollection: ...)`
-    static func splash(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.splash, compatibleWith: traitCollection)
-    }
-    #endif
-
-    fileprivate init() {}
-  }
-
   /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `AddEmployeeTableViewCell`.
@@ -181,7 +166,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 13 localization keys.
     struct localizable {
       /// Value: Accountant Type
       static let accountantType = Rswift.StringResource(key: "accountantType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -195,8 +180,12 @@ struct R: Rswift.Validatable {
       static let list = Rswift.StringResource(key: "list", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Lunch Time
       static let lunchTime = Rswift.StringResource(key: "lunchTime", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Materials Accounting
+      static let materialsAccounting = Rswift.StringResource(key: "materialsAccounting", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Name
       static let name = Rswift.StringResource(key: "name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Payroll
+      static let payroll = Rswift.StringResource(key: "payroll", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Reception Hours
       static let receptionHours = Rswift.StringResource(key: "receptionHours", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Salary
@@ -284,6 +273,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("lunchTime", bundle: bundle, comment: "")
       }
 
+      /// Value: Materials Accounting
+      static func materialsAccounting(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("materialsAccounting", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "materialsAccounting"
+        }
+
+        return NSLocalizedString("materialsAccounting", bundle: bundle, comment: "")
+      }
+
       /// Value: Name
       static func name(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -295,6 +297,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("name", bundle: bundle, comment: "")
+      }
+
+      /// Value: Payroll
+      static func payroll(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("payroll", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "payroll"
+        }
+
+        return NSLocalizedString("payroll", bundle: bundle, comment: "")
       }
 
       /// Value: Reception Hours

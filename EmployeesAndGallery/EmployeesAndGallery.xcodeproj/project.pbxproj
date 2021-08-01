@@ -39,6 +39,7 @@
 		99B3891326B5D58800CDD957 /* SegmentControlHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3891226B5D58800CDD957 /* SegmentControlHeaderView.xib */; };
 		99B3891626B5D85E00CDD957 /* UITableView+reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */; };
 		99B3892026B5E68900CDD957 /* UIView+loadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */; };
+		99B3892326B692BD00CDD957 /* AddEmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3892226B692BD00CDD957 /* AddEmployeeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		99B3891226B5D58800CDD957 /* SegmentControlHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentControlHeaderView.xib; sourceTree = "<group>"; };
 		99B3891526B5D85E00CDD957 /* UITableView+reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+reusable.swift"; sourceTree = "<group>"; };
 		99B3891F26B5E68900CDD957 /* UIView+loadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+loadNib.swift"; sourceTree = "<group>"; };
+		99B3892226B692BD00CDD957 /* AddEmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeModel.swift; sourceTree = "<group>"; };
 		9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesAndGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 		99B3887226B5587200CDD957 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				99B3892226B692BD00CDD957 /* AddEmployeeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				99B388F526B59A4D00CDD957 /* Accountant+CoreDataProperties.swift in Sources */,
 				99B3889626B56A3200CDD957 /* EmployeesFlowController.swift in Sources */,
 				99B3887D26B5592F00CDD957 /* ActivityView.swift in Sources */,
+				99B3892326B692BD00CDD957 /* AddEmployeeModel.swift in Sources */,
 				99B3884126B5485D00CDD957 /* AppDelegate.swift in Sources */,
 				99B388F126B59A4D00CDD957 /* BaseEmployee+CoreDataClass.swift in Sources */,
 				99B3886C26B5533C00CDD957 /* R.generated.swift in Sources */,

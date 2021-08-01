@@ -18,7 +18,6 @@ final class AddEmployeeTableViewCell: UITableViewCell {
         }
     }
 
-
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -27,6 +26,7 @@ final class AddEmployeeTableViewCell: UITableViewCell {
 extension AddEmployeeTableViewCell {
     struct ViewModel {
         var title: String
+        var inputView: UIView? = nil
     }
 }
 
@@ -37,5 +37,6 @@ fileprivate extension AddEmployeeTableViewCell {
         }
 
         titleLabel.text = viewModel.title
+        valueTextfield.inputView = viewModel.inputView
     }
 }

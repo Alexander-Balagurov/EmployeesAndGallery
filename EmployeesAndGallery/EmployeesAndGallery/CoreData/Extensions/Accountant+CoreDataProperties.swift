@@ -16,6 +16,17 @@ extension Accountant {
         return NSFetchRequest<Accountant>(entityName: "Accountant")
     }
 
-    @NSManaged public var accountantType: Int64
+    @NSManaged public var accountantType: AccountantType
+}
 
+@objc public enum AccountantType: Int64, CaseIterable {
+    case payroll
+    case materialsAccounting
+
+    var title: String {
+        switch self {
+        case .payroll:                  return R.string.localizable.payroll()
+        case .materialsAccounting:      return R.string.localizable.materialsAccounting()
+        }
+    }
 }
