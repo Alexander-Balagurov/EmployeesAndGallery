@@ -52,7 +52,7 @@ fileprivate extension EmployeesFlowController {
     }
 
     func handleAddAction() {
-        let vc = AddEmployeeViewController()
+        let vc = AddEmployeeViewController(baseEmployee: Employee(), context: nil)
         navVC.pushViewController(vc, animated: true)
     }
 }

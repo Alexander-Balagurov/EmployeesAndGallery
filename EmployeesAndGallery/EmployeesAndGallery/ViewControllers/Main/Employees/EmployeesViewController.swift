@@ -13,7 +13,6 @@ final class EmployeesViewController: BaseViewController {
 
     var resultActionHandler: ((ResultAction) -> Void)?
 
-
     // MARK: - Private
     private let tableView: UITableView = .init()
 

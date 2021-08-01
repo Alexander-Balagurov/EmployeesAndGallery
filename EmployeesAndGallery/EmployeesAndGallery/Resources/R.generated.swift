@@ -194,14 +194,18 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 18 localization keys.
     struct localizable {
+      /// Value: Accountant
+      static let accountant = Rswift.StringResource(key: "Accountant", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Accountant Type
       static let accountantType = Rswift.StringResource(key: "accountantType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Back
       static let back = Rswift.StringResource(key: "back", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Edit
       static let edit = Rswift.StringResource(key: "edit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Employee
+      static let employee = Rswift.StringResource(key: "employee", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Employee Type
       static let employeeType = Rswift.StringResource(key: "employeeType", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Forward
@@ -212,6 +216,8 @@ struct R: Rswift.Validatable {
       static let list = Rswift.StringResource(key: "list", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Lunch Time
       static let lunchTime = Rswift.StringResource(key: "lunchTime", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Management
+      static let management = Rswift.StringResource(key: "management", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Materials Accounting
       static let materialsAccounting = Rswift.StringResource(key: "materialsAccounting", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Name
@@ -226,6 +232,19 @@ struct R: Rswift.Validatable {
       static let save = Rswift.StringResource(key: "save", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Workplace Number
       static let workplaceNumber = Rswift.StringResource(key: "workplaceNumber", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Accountant
+      static func accountant(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Accountant", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Accountant"
+        }
+
+        return NSLocalizedString("Accountant", bundle: bundle, comment: "")
+      }
 
       /// Value: Accountant Type
       static func accountantType(preferredLanguages: [String]? = nil) -> String {
@@ -264,6 +283,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("edit", bundle: bundle, comment: "")
+      }
+
+      /// Value: Employee
+      static func employee(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("employee", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "employee"
+        }
+
+        return NSLocalizedString("employee", bundle: bundle, comment: "")
       }
 
       /// Value: Employee Type
@@ -329,6 +361,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("lunchTime", bundle: bundle, comment: "")
+      }
+
+      /// Value: Management
+      static func management(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("management", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "management"
+        }
+
+        return NSLocalizedString("management", bundle: bundle, comment: "")
       }
 
       /// Value: Materials Accounting

@@ -11,7 +11,18 @@ final class SegmentControlHeaderView: UIView {
 
     @IBOutlet var segmentControl: UISegmentedControl!
 
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
+
+        configureSegmentControl()
+    }
+}
+
+fileprivate extension SegmentControlHeaderView {
+
+    func configureSegmentControl() {
+        segmentControl.setTitle(EmployeeType.employee.title, forSegmentAt: 0)
+        segmentControl.setTitle(EmployeeType.accountant.title, forSegmentAt: 1)
+        segmentControl.setTitle(EmployeeType.management.title, forSegmentAt: 2)
     }
 }

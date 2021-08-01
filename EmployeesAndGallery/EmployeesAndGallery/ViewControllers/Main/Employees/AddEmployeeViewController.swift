@@ -6,13 +6,27 @@
 //
 
 import UIKit
+import CoreData
 
 final class AddEmployeeViewController: BaseViewController {
 
     // MARK: - Private
     private let tableView: UITableView = .init(frame: .zero)
     private let headerView: SegmentControlHeaderView = .loadFromNib()
-    private var addEmployeeModel: AddEmployeeModel = .init()
+    private var baseEmployee: BaseEmployee
+    private var context: NSManagedObjectContext?
+
+    //MARK: - Init
+    init(baseEmployee: BaseEmployee, context: NSManagedObjectContext?) {
+        self.baseEmployee = baseEmployee
+        self.context = context
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //MARK: - Override
     override func viewDidLoad() {
@@ -41,6 +55,20 @@ fileprivate extension AddEmployeeViewController {
             case .accountantType:       return R.string.localizable.accountantType()
             }
         }
+
+        static func cellTypesForEmployee(type: BaseEmployee) -> [CellType] {
+
+            switch type {
+            case _ as Accountant:
+                return [.name, .salary, .workplaceNumber, .lunchTime, .accountantType]
+            case _ as Employee:
+                return [.name, .salary, .workplaceNumber, .lunchTime]
+            case _ as Management:
+                return [.name, .salary, .receptionHours]
+            default:
+                return [.name, .salary]
+            }
+        }
     }
 
     func initialSetup() {
@@ -49,6 +77,7 @@ fileprivate extension AddEmployeeViewController {
         configureNavigationBar()
         view.addSubview(tableView)
         setupTableView()
+        headerView.segmentControl.addTarget(self, action: #selector(segmentDidChange), for: .valueChanged)
     }
 
     func configureNavigationBar() {
@@ -79,7 +108,7 @@ fileprivate extension AddEmployeeViewController {
         }
     }
 
-    func createFontSizePicker() -> UIPickerView {
+    func createAccountantTypePicker() -> UIPickerView {
 
         let picker = UIPickerView()
         picker.dataSource = self
@@ -94,23 +123,37 @@ fileprivate extension AddEmployeeViewController {
     @objc func saveButtonTapped() {
 
     }
+
+    @objc func segmentDidChange() {
+        switch headerView.segmentControl.selectedSegmentIndex {
+        case 0:
+            baseEmployee = Employee()
+        case 1:
+            baseEmployee = Accountant()
+        case 2:
+            baseEmployee = Management()
+        default:
+            break
+        }
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension AddEmployeeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CellType.allCases.count
+        return CellType.cellTypesForEmployee(type: baseEmployee).count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cellType = CellType.init(at: indexPath)
+        let cellType = CellType.cellTypesForEmployee(type: baseEmployee)[indexPath.row]
         let cell: AddEmployeeTableViewCell = tableView.dequeueCell(indexPath: indexPath)
+        cell.titleLabel.text = cellType.titleText
         if cellType == .accountantType {
-            cell.viewModel = .init(title: cellType.titleText, inputView: createFontSizePicker())
-        } else {
-            cell.viewModel = .init(title: cellType.titleText)
+            cell.valueTextfield.inputView = createAccountantTypePicker()
+            cell.valueTextfield.tintColor = .clear
         }
 
         return cell
@@ -141,10 +184,16 @@ extension AddEmployeeViewController: UIPickerViewDelegate, UIPickerViewDataSourc
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
-        return "tets"
+        return AccountantType.allCases[row].title
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
+        guard let accountantTypeIndex = CellType.cellTypesForEmployee(type: baseEmployee).firstIndex(of: .accountantType) else {
+            return
+        }
+        let cell: AddEmployeeTableViewCell = tableView.cellForRow(
+            at: IndexPath(row: accountantTypeIndex, section: 0)
+        ) as! AddEmployeeTableViewCell
+        cell.valueTextfield.text = AccountantType.allCases[row].title
     }
 }
