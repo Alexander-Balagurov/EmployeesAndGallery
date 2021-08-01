@@ -33,29 +33,22 @@ fileprivate extension EmployeesFlowController {
     func createEmployeesViewController() -> EmployeesViewController {
 
         let vc = EmployeesViewController(persistentContainer: persistentContainer)
-        vc.resultActionHandler = { [weak self] action in
-            switch action {
-
-            case .edit:
-                self?.handleEditAction()
-            case .add:
-                self?.handleAddAction()
-            }
+        vc.resultActionHandler = { [weak self] in
+            
+            self?.handleAddAction()
         }
 
         return vc
     }
 
     //MARK: - Action Handlers
-
-    func handleEditAction() {
-
-    }
-
     func handleAddAction() {
-        let vc = AddEmployeeViewController(baseEmployee: Employee(context: persistentContainer.viewContext), context: persistentContainer.viewContext)
+        let context = persistentContainer.newChildOfViewContext()
+        let vc = AddEmployeeViewController(baseEmployee: Employee(context: context), context: context)
         vc.resultActionHandler = { [weak self] in
 
+            context.saveChangesIfNeed()
+            self?.persistentContainer.viewContext.saveChangesIfNeed()
             self?.navVC.popViewController(animated: true)
         }
         navVC.pushViewController(vc, animated: true)

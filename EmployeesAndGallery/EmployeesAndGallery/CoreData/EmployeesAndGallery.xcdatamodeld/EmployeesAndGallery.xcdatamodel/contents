@@ -3,7 +3,7 @@
     <entity name="Accountant" representedClassName="Accountant" parentEntity="Employee" syncable="YES">
         <attribute name="accountantType" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="BaseEmployee" representedClassName="BaseEmployee" syncable="YES">
+    <entity name="BaseEmployee" representedClassName="BaseEmployee" isAbstract="YES" syncable="YES">
         <attribute name="employeeType" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="salary" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>

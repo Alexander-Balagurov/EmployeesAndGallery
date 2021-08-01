@@ -36,6 +36,15 @@ class PersistentContainer: NSPersistentContainer {
         }
     }
 
+    func newChildOfViewContext() -> NSManagedObjectContext {
+
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = viewContext
+        context.automaticallyMergesChangesFromParent = true
+
+        return context
+    }
+
     func saveChanges() {
 
         viewContext.saveChangesIfNeed()

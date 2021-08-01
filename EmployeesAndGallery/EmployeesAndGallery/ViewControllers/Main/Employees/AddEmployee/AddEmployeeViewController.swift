@@ -128,11 +128,12 @@ fileprivate extension AddEmployeeViewController {
 
     @objc func saveButtonTapped() {
         
-        context.saveChangesIfNeed()
         resultActionHandler?()
     }
 
     @objc func segmentDidChange() {
+        
+        context.delete(baseEmployee)
         switch headerView.segmentControl.selectedSegmentIndex {
         case 0:
             baseEmployee = Employee(context: context)

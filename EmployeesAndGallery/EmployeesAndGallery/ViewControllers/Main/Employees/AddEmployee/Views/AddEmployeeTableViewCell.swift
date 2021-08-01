@@ -8,9 +8,13 @@
 import UIKit
 
 final class AddEmployeeTableViewCell: UITableViewCell {
+
+    //MARK: - Public properties
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var valueTextfield: UITextField!
+
+    //MARK: - Override
 
     override func awakeFromNib() {
         super.awakeFromNib()

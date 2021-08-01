@@ -130,10 +130,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `AddEmployeeTableViewCell`.
     static let addEmployeeTableViewCell = _R.nib._AddEmployeeTableViewCell()
+    /// Nib `EmployeesTableViewCell`.
+    static let employeesTableViewCell = _R.nib._EmployeesTableViewCell()
     /// Nib `GalleryViewCell`.
     static let galleryViewCell = _R.nib._GalleryViewCell()
     /// Nib `GalleryViewController`.
@@ -146,6 +148,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addEmployeeTableViewCell) instead")
     static func addEmployeeTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addEmployeeTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "EmployeesTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.employeesTableViewCell) instead")
+    static func employeesTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.employeesTableViewCell)
     }
     #endif
 
@@ -175,6 +185,10 @@ struct R: Rswift.Validatable {
 
     static func addEmployeeTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddEmployeeTableViewCell? {
       return R.nib.addEmployeeTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddEmployeeTableViewCell
+    }
+
+    static func employeesTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmployeesTableViewCell? {
+      return R.nib.employeesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmployeesTableViewCell
     }
 
     static func galleryViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GalleryViewCell? {
@@ -508,6 +522,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddEmployeeTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddEmployeeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _EmployeesTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "EmployeesTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EmployeesTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EmployeesTableViewCell
       }
 
       fileprivate init() {}
