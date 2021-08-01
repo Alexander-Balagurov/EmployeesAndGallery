@@ -16,6 +16,16 @@ extension Management {
         return NSFetchRequest<Management>(entityName: "Management")
     }
 
-    @NSManaged public var receptionHours: String?
+    @NSManaged public var receptionHours: String
 
+
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+
+        employeeType = EmployeeType.management
+    }
+
+    public override var isFulfilled: Bool {
+        super.isFulfilled && !receptionHours.isEmpty
+    }
 }

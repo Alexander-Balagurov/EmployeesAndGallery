@@ -14,10 +14,11 @@ final class AddEmployeeViewController: BaseViewController {
     private let tableView: UITableView = .init(frame: .zero)
     private let headerView: SegmentControlHeaderView = .loadFromNib()
     private var baseEmployee: BaseEmployee
-    private var context: NSManagedObjectContext?
+    private var context: NSManagedObjectContext
+    var resultActionHandler: (() -> Void)?
 
     //MARK: - Init
-    init(baseEmployee: BaseEmployee, context: NSManagedObjectContext?) {
+    init(baseEmployee: BaseEmployee, context: NSManagedObjectContext) {
         self.baseEmployee = baseEmployee
         self.context = context
 
@@ -89,13 +90,14 @@ fileprivate extension AddEmployeeViewController {
             target: self,
             action: #selector(saveButtonTapped)
         )
+        updateSaveButton()
     }
 
     func setupTableView() {
 
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         headerView.frame.size.height = 50
         tableView.tableHeaderView = headerView
         tableView.registerNibForCell(AddEmployeeTableViewCell.self)
@@ -118,24 +120,63 @@ fileprivate extension AddEmployeeViewController {
         return picker
     }
 
+    func updateSaveButton() {
+        navigationItem.rightBarButtonItem?.isEnabled = baseEmployee.isFulfilled
+    }
+
     //MARK: - Actions
 
     @objc func saveButtonTapped() {
-
+        
+        context.saveChangesIfNeed()
+        resultActionHandler?()
     }
 
     @objc func segmentDidChange() {
         switch headerView.segmentControl.selectedSegmentIndex {
         case 0:
-            baseEmployee = Employee()
+            baseEmployee = Employee(context: context)
         case 1:
-            baseEmployee = Accountant()
+            baseEmployee = Accountant(context: context)
         case 2:
-            baseEmployee = Management()
+            baseEmployee = Management(context: context)
         default:
             break
         }
         tableView.reloadData()
+        updateSaveButton()
+    }
+
+    @objc func textfieldValueDidChange(_ sender: UITextField) {
+        guard let indexPath = tableView.indexPathForRow(with: sender),
+              let text = sender.text else { return }
+
+        let cellType = CellType.cellTypesForEmployee(type: baseEmployee)[indexPath.row]
+
+        switch cellType {
+        case .name:
+            baseEmployee.name = text
+        case .salary:
+            if let intSalary = Int64(text) {
+                baseEmployee.salary = intSalary
+            }
+        case .receptionHours:
+            if let management = baseEmployee as? Management {
+                management.receptionHours = text
+            }
+        case .workplaceNumber:
+            if let employee = baseEmployee as? Employee,
+               let workplaceNumber = Int64(text) {
+                employee.workplaceNumber = workplaceNumber
+            }
+        case .lunchTime:
+            if let employee = baseEmployee as? Employee {
+                employee.lunchTime = text
+            }
+        case .accountantType:
+            break
+        }
+        updateSaveButton()
     }
 }
 
@@ -151,21 +192,19 @@ extension AddEmployeeViewController: UITableViewDataSource {
         let cellType = CellType.cellTypesForEmployee(type: baseEmployee)[indexPath.row]
         let cell: AddEmployeeTableViewCell = tableView.dequeueCell(indexPath: indexPath)
         cell.titleLabel.text = cellType.titleText
-        if cellType == .accountantType {
+        cell.valueTextfield.addTarget(self, action: #selector(textfieldValueDidChange), for: .editingChanged)
+        switch cellType {
+        case .accountantType:
             cell.valueTextfield.inputView = createAccountantTypePicker()
             cell.valueTextfield.tintColor = .clear
+            cell.valueTextfield.text = AccountantType.allCases[0].title
+        case .salary, .workplaceNumber:
+            cell.valueTextfield.keyboardType = .decimalPad
+        default:
+            break
         }
 
         return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension AddEmployeeViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -194,6 +233,11 @@ extension AddEmployeeViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         let cell: AddEmployeeTableViewCell = tableView.cellForRow(
             at: IndexPath(row: accountantTypeIndex, section: 0)
         ) as! AddEmployeeTableViewCell
+        if let accountant = baseEmployee as? Accountant,
+           let type = AccountantType.init(rawValue: Int64(row)) {
+            accountant.accountantType = type
+        }
         cell.valueTextfield.text = AccountantType.allCases[row].title
+        updateSaveButton()
     }
 }

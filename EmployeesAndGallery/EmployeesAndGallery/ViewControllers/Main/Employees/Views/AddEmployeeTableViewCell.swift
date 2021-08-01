@@ -15,4 +15,12 @@ final class AddEmployeeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        titleLabel.text = ""
+        valueTextfield.text = ""
+        valueTextfield.keyboardType = .default
+    }
 }

@@ -5,15 +5,15 @@
     </entity>
     <entity name="BaseEmployee" representedClassName="BaseEmployee" syncable="YES">
         <attribute name="employeeType" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="salary" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="salary" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Employee" representedClassName="Employee" parentEntity="BaseEmployee" syncable="YES">
-        <attribute name="lunchTime" optional="YES" attributeType="String"/>
-        <attribute name="workplaceNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lunchTime" attributeType="String"/>
+        <attribute name="workplaceNumber" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Management" representedClassName="Management" parentEntity="BaseEmployee" syncable="YES">
-        <attribute name="receptionHours" optional="YES" attributeType="String"/>
+        <attribute name="receptionHours" attributeType="String"/>
     </entity>
     <elements>
         <element name="Accountant" positionX="-18" positionY="45" width="128" height="44"/>

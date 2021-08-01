@@ -17,6 +17,15 @@ extension Employee {
     }
 
     @NSManaged public var workplaceNumber: Int64
-    @NSManaged public var lunchTime: String?
+    @NSManaged public var lunchTime: String
 
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+
+        employeeType = EmployeeType.employee
+    }
+
+    public override var isFulfilled: Bool {
+        super.isFulfilled && workplaceNumber != 0 && !lunchTime.isEmpty
+    }
 }

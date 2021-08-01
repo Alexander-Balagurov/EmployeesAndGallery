@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class EmployeesViewController: BaseViewController {
 
@@ -15,12 +16,33 @@ final class EmployeesViewController: BaseViewController {
 
     // MARK: - Private
     private let tableView: UITableView = .init()
+    private let persistentContainer: PersistentContainer
+
+    //MARK: - Init
+    init(persistentContainer: PersistentContainer) {
+        self.persistentContainer = persistentContainer
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initialSetup()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let request: NSFetchRequest = BaseEmployee.fetchRequest()
+
+        let baseEmp: [BaseEmployee] = try! persistentContainer.viewContext.fetch(request)
+        print(baseEmp)
     }
 }
 

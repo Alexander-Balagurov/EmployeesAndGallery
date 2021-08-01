@@ -12,6 +12,7 @@ final class EmployeesFlowController: BaseViewController {
     // MARK: - Private
     private lazy var employeesVC: EmployeesViewController = createEmployeesViewController()
     private let navVC: UINavigationController = .init()
+    private let persistentContainer: PersistentContainer = .init()
 
     //MARK: - Override
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ fileprivate extension EmployeesFlowController {
 
     func createEmployeesViewController() -> EmployeesViewController {
 
-        let vc = EmployeesViewController()
+        let vc = EmployeesViewController(persistentContainer: persistentContainer)
         vc.resultActionHandler = { [weak self] action in
             switch action {
 
@@ -52,7 +53,11 @@ fileprivate extension EmployeesFlowController {
     }
 
     func handleAddAction() {
-        let vc = AddEmployeeViewController(baseEmployee: Employee(), context: nil)
+        let vc = AddEmployeeViewController(baseEmployee: Employee(context: persistentContainer.viewContext), context: persistentContainer.viewContext)
+        vc.resultActionHandler = { [weak self] in
+
+            self?.navVC.popViewController(animated: true)
+        }
         navVC.pushViewController(vc, animated: true)
     }
 }

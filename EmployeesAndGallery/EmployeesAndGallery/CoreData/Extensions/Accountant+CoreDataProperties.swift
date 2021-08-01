@@ -17,6 +17,12 @@ extension Accountant {
     }
 
     @NSManaged public var accountantType: AccountantType
+
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+
+        employeeType = EmployeeType.accountant
+    }
 }
 
 @objc public enum AccountantType: Int64, CaseIterable {

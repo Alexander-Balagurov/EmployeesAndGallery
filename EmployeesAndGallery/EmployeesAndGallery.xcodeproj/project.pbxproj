@@ -42,6 +42,7 @@
 		99B3893326B69DEB00CDD957 /* UICollectionView+reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3893226B69DEB00CDD957 /* UICollectionView+reusable.swift */; };
 		99B3893D26B6A3E400CDD957 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3893C26B6A3E400CDD957 /* GalleryViewController.xib */; };
 		99B3894026B6A47600CDD957 /* GalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B3893F26B6A47600CDD957 /* GalleryViewCell.xib */; };
+		99B3894C26B6F3B000CDD957 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3894B26B6F3B000CDD957 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		99B3893226B69DEB00CDD957 /* UICollectionView+reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+reusable.swift"; sourceTree = "<group>"; };
 		99B3893C26B6A3E400CDD957 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
 		99B3893F26B6A47600CDD957 /* GalleryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewCell.xib; sourceTree = "<group>"; };
+		99B3894B26B6F3B000CDD957 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		9A9B57A7FEBFCDA76E815652 /* Pods_EmployeesAndGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesAndGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 				99B3887226B5587200CDD957 /* Models */,
 				99B388F726B59B3D00CDD957 /* Extensions */,
 				99B3884926B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld */,
+				99B3894B26B6F3B000CDD957 /* PersistentContainer.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				99B3892F26B69C4900CDD957 /* GalleryViewController.swift in Sources */,
 				99B3884B26B5485D00CDD957 /* EmployeesAndGallery.xcdatamodeld in Sources */,
 				99B3887926B5590200CDD957 /* Autolayout.swift in Sources */,
+				99B3894C26B6F3B000CDD957 /* PersistentContainer.swift in Sources */,
 				99B3892026B5E68900CDD957 /* UIView+loadNib.swift in Sources */,
 				99B388FF26B5AE7600CDD957 /* AddEmployeeViewController.swift in Sources */,
 				99B3891626B5D85E00CDD957 /* UITableView+reusable.swift in Sources */,
